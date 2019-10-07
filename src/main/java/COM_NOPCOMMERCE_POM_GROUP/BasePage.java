@@ -1,4 +1,8 @@
 package COM_NOPCOMMERCE_POM_GROUP;
 
-public class BasePage {
+import org.openqa.selenium.WebDriver;
+
+public class BasePage
+{
+    protected static WebDriver driver;
 }
