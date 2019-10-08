@@ -18,7 +18,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class Utils extends BasePage
 {
     //(1) it will click on elements
-    public static void clickOnElements(By by)
+    public static void clickOnElement(By by)
     {
         driver.findElement(by).click();
     }
@@ -190,11 +190,6 @@ public class Utils extends BasePage
         DateFormat format=new SimpleDateFormat("ddMMyyHHmmss");
         return format.format(new Date());
     }
-    //(28) take screenshot of current display(full)
-
-
-
-
     //(29) take screenshot of browser
     public static void takeScreenShot(WebDriver webdriver, String fileWithPath) throws IOException
     {
@@ -222,13 +217,7 @@ public class Utils extends BasePage
         SimpleDateFormat dateFormat1 = new SimpleDateFormat();
         return new SimpleDateFormat("dd.MM.yyyy.HH.mm.ss").format(new Date());
     }
-    //(32) convert date....
-//    public SimpleDateFormat covertDate()
-//    {
-//        SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyyMMddHHMM");
-//        return new SimpleDateFormat("dd-MMM-yyyy HH:MM");
-//    }
-    //(33) This method determines if an element is enabled or not
+     //(33) This method determines if an element is enabled or not
     public static boolean ifWebElementIsEnabledOrNot(By by)
     {
         return driver.findElement(by).isEnabled();
@@ -263,15 +252,18 @@ public class Utils extends BasePage
         action.moveToElement(driver.findElement(by)).click().build().perform();
     }
     //(28) captureScreenShot when test case fails
-    public static void captureScreenShot(WebDriver driver, String screenShotName) {
-        try {
+    public static void captureScreenShot(WebDriver driver, String screenShotName)
+    {
+        try
+        {
             TakesScreenshot ts = (TakesScreenshot) driver;
             File source = ts.getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(source, new File("src\\main\\Resources\\Screenshots" + screenShotName + ".png"));
+            FileUtils.copyFile(source, new File("src\\test\\Resources\\ScreenShots" + screenShotName + ".png"));
             System.out.println("***ScreenShot is taken***");
-        } catch (IOException e) {
-            System.out.println("Exception while taking ScreenShot" + e.getMessage());
+        }
+        catch (IOException e)
+        {
+            System.out.println("Exception while taking ScreenShot" +e.getMessage());
         }
     }
-
 }

@@ -1,5 +1,28 @@
 package COM_NOPCOMMERCE_POM_GROUP;
 
+import org.openqa.selenium.By;
+
 public class HomePage extends Utils
 {
+    String test = "venus";
+
+    private By _registerLink = By.xpath("//a[@class='ico-register']");
+    private By _computerLink = By.linkText("Computer");
+    private By _apparelLink = By.linkText("Apparel");
+    private By _digitalDownloadLink = By.linkText("Digital download");
+
+    public void clickOnRegisterButton()
+    {
+        clickOnElement(_registerLink);
+    }
+    public void clickOnComputerLink(){
+        clickOnElement(_computerLink);
+    }
+    public void clickOnApparelLink(){
+        clickOnElement(_apparelLink);
+    }
+    public void clickOnDigitalDownLoadLink()
+    {
+        clickOnElement(_digitalDownloadLink);
+    }
 }
