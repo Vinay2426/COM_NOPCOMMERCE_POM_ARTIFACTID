@@ -9,6 +9,7 @@ public class TestSuit extends BaseTest
     RegistrationResultPage registrationResultPage = new RegistrationResultPage();
     ReferProduct referProduct = new ReferProduct();
     ReferProductResultPage referProductResultPage = new ReferProductResultPage();
+    NotReferProductUnsuccessfulMessage notReferProductUnsuccessfulMessage = new NotReferProductUnsuccessfulMessage();
 
     @Test
     public void userShouldAbleToRegisterSuccessfully()
@@ -31,5 +32,14 @@ public class TestSuit extends BaseTest
         referProductResultPage.verifyUserIsOnAppleMacBookProPage();
         referProduct.referProductToFriend();
         referProductResultPage.verifyEmailHasBeenSentSuccessfully();
+    }
+    @Test
+    public void userShouldNotAbleToReferProductToFriendWithoutRegistration()
+    {
+        homePage.clickOnFeaturedProductMacBookPro();
+        referProductResultPage.verifyUserIsOnAppleMacBookProPage();
+        referProduct.referProductToFriend();
+        notReferProductUnsuccessfulMessage.verifyUserShouldNotAbleToSendEmailWithoutRegistration();
+
     }
 }
