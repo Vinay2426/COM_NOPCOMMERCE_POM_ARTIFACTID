@@ -9,6 +9,6 @@ public class NotReferProductUnsuccessfulMessage extends Utils
 
     public void verifyUserShouldNotAbleToSendEmailWithoutRegistration()
     {
-        //Assert.assertEquals(getTextFromLocator(_emailErrorMessageIfTriesWithoutRegistration),"Enter your email");
+        Assert.assertEquals(getTextFromLocator(_emailErrorMessageIfTriesWithoutRegistration),"Enter your email");
     }
 }

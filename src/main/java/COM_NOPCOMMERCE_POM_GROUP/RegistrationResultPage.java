@@ -7,11 +7,12 @@ public class RegistrationResultPage extends Utils
 {
     private By _registerPage = By.xpath("//h1['Register']");
     private By _registerSuccessMessage = By.xpath("//div[@class='result']");
-    private By _homePage = By.xpath("//img[@alt='nopCommerce demo store']");
+    //private By _homePage = By.xpath("//img[@alt='nopCommerce demo store']");
+    //private String _homePage = driver.getCurrentUrl();
 
     public void verifyUserIsOnRegistrationPage()
     {
-        //Assert.assertEquals(getTextFromLocator(_registerPage),"Register");
+        Assert.assertEquals(getTextFromLocator(_registerPage),"Register");
     }
     public void verifyUserSeeRegistrationSuccessMessage()
     {
@@ -19,7 +20,7 @@ public class RegistrationResultPage extends Utils
     }
     public void verifyUserIsOnHomePage()
     {
-        //Assert.assertEquals(getTextFromLocator(_homePage),"nopCommerce demo store");
+        //Assert.assertEquals(_homePage,"https://demo.nopcommerce.com/");
     }
 
 }

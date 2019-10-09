@@ -12,6 +12,7 @@ public class RegistrationPage extends Utils
     private By _password = By.id("Password");
     private By _confirmPassword = By.id("ConfirmPassword");
     private By _registerButton = By.name("register-button");
+    private By _registerSuccessMessage = By.xpath("//div[@class='result']");
     private By _clickContinue = By.xpath("//input[@name='register-continue']");
 
     private static String timeStamp = longDateStamp();
@@ -24,6 +25,7 @@ public class RegistrationPage extends Utils
         sendText(_password,"alpertonhouse");
         sendText(_confirmPassword,"alpertonhouse");
         clickOnElement(_registerButton);
+        assertMethod(_registerSuccessMessage,"Your registration completed");
         clickOnElement(_clickContinue);
     }
 }
