@@ -12,11 +12,18 @@ public class RegistrationPage extends Utils
     private By _password = By.id("Password");
     private By _confirmPassword = By.id("ConfirmPassword");
     private By _registerButton = By.name("register-button");
+    private By _clickContinue = By.xpath("//input[@name='register-continue']");
 
     private static String timeStamp = longDateStamp();
 
-    public void verifyUserIsOnRegistrationPage()
+    public void userEntersRegistrationDetails()
     {
-        //assertURL("register");
+        sendText(_firstName,loadProps.getProperty("firstName"));
+        sendText(_lastName,loadProps.getProperty("lastName"));
+        sendText(_email, "testvenus"+timeStamp+"@rahu.com");
+        sendText(_password,"alpertonhouse");
+        sendText(_confirmPassword,"alpertonhouse");
+        clickOnElement(_registerButton);
+        clickOnElement(_clickContinue);
     }
 }

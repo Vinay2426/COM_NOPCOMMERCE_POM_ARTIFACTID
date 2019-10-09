@@ -18,17 +18,17 @@ public class BaseTest extends Utils
     {
         browserSelector.setUpBrowser();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get("url"); //url will obtain info from dataConfig
+        driver.manage().window().maximize();//driver.get("https://demo.nopcommerce.com/");
+        getUrl("url");
     }
-    @AfterTest
-    public void tearDown(ITestResult result)
-    {
-        if(ITestResult.FAILURE==result.getStatus())
-        {
-            captureScreenShot(driver, result.getName());
-        }
-        driver.close();
-        //driver.quit();
-    }
+//    @AfterTest
+//    public void tearDown(ITestResult result)
+//    {
+//        if(ITestResult.FAILURE==result.getStatus())
+//        {
+//            captureScreenShot(driver, result.getName());
+//        }
+//        driver.close();
+//        driver.quit();
+//    }
 }

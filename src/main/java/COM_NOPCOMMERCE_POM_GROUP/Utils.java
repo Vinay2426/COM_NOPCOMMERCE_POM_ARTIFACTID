@@ -28,7 +28,7 @@ public class Utils extends BasePage
         driver.findElement(by).clear();
     }
     //(3) to enter text of element
-    public static void enterText (By by, String text)
+    public static void sendText (By by, String text)
     {
         driver.findElement(by).sendKeys(text);
     }
