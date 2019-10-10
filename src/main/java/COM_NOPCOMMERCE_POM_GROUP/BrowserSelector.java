@@ -1,6 +1,5 @@
 package COM_NOPCOMMERCE_POM_GROUP;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -15,7 +14,7 @@ public class BrowserSelector extends Utils
 
         if (browser.equalsIgnoreCase("firefox"))
         {
-            System.setProperty("webdriver.firefox.bin", "src\\test\\Resources\\BrowserDriver\\geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", "src\\test\\Resources\\BrowserDriver\\geckodriver.exe");
              driver = new FirefoxDriver();
         }
         else if (browser.equalsIgnoreCase("chrome"))
