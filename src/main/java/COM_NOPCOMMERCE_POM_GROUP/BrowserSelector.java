@@ -3,6 +3,7 @@ package COM_NOPCOMMERCE_POM_GROUP;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.opera.OperaDriver;
 
 public class BrowserSelector extends Utils
 {
@@ -26,6 +27,11 @@ public class BrowserSelector extends Utils
         {
             System.setProperty("webdriver.ie.driver", "src\\test\\Resources\\BrowserDriver\\IEDriverServer.exe");
             driver = new InternetExplorerDriver();
+        }
+        else if (browser.equalsIgnoreCase("opera"))
+        {
+            System.setProperty("webdriver.opera.driver", "src\\test\\Resources\\BrowserDriver\\operadriver.exe");
+            driver = new OperaDriver();
         }
         else
             {

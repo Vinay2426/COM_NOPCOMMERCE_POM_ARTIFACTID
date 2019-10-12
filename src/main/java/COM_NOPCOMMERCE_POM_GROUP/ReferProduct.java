@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 
 public class ReferProduct extends Utils
 {
-    LoadProps loadProps = new LoadProps();
-
     private By _clickOnEmail = By.xpath("//input[@value='Email a friend']");
     private By _typeEmailAddress = By.id("FriendEmail");
     private By _personalMessageInEmail = By.name("PersonalMessage");

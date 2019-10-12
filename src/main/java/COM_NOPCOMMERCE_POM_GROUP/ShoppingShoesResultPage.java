@@ -9,6 +9,6 @@ public class ShoppingShoesResultPage extends Utils
 
     public void verifyUserSeeSuccessfulOrderMessage()
     {
-        Assert.assertEquals(getTextFromLocator(_successfulShoppingMessage),"Your order has been successfully processed!");
+        Assert.assertEquals(getTextReturn(_successfulShoppingMessage),"Your order has been successfully processed!");
     }
 }

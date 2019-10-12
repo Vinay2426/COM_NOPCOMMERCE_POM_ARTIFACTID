@@ -13,29 +13,28 @@ public class TestSuit extends BaseTest
     ShoppingShoesResultPage shoppingShoesResultPage = new ShoppingShoesResultPage();
     GuestUserShoppingShoes guestUserShoppingShoes = new GuestUserShoppingShoes();
 
-    @Test //(priority = 1)
+
+    @Test (priority = 1)
     public void userShouldAbleToRegisterSuccessfully()
     {
         homePage.clickOnRegisterButton();
         registrationResultPage.verifyUserIsOnRegistrationPage();
         registrationPage.userEntersRegistrationDetails();
-        //registrationResultPage.verifyUserSeeRegistrationSuccessMessage();
         registrationResultPage.verifyUserIsOnHomePage();
     }
-    @Test //(priority = 2)
+    @Test (priority = 2)
     public void userShouldAbleToReferProductToFriend()
     {
         homePage.clickOnRegisterButton();
         registrationResultPage.verifyUserIsOnRegistrationPage();
         registrationPage.userEntersRegistrationDetails();
-        //registrationResultPage.verifyUserSeeRegistrationSuccessMessage();
         registrationResultPage.verifyUserIsOnHomePage();
         homePage.clickOnFeaturedProductMacBookPro();
         referProductResultPage.verifyUserIsOnAppleMacBookProPage();
         referProduct.referProductToFriend();
         referProductResultPage.verifyEmailHasBeenSentSuccessfully();
     }
-    @Test //(priority = 3)
+    @Test (priority = 3)
     public void userShouldNotAbleToReferProductToFriendWithoutRegistration()
     {
         homePage.clickOnFeaturedProductMacBookPro();
@@ -44,19 +43,18 @@ public class TestSuit extends BaseTest
         referProductResultPage.verifyUserIsOnEmailAFriendPage();
         referProductResultPage.verifyUserShouldNotAbleToSendEmailWithoutRegistration();
     }
-    @Test //(priority = 4)
+    @Test (priority = 4)
     public void registeredUserShouldBuyProductSuccessfully()
     {
         homePage.clickOnRegisterButton();
         registrationResultPage.verifyUserIsOnRegistrationPage();
         registrationPage.userEntersRegistrationDetails();
-        registrationResultPage.verifyUserSeeRegistrationSuccessMessage();
         registrationResultPage.verifyUserIsOnHomePage();
         homePage.clickOnApparelLink();
         shoppingShoes.userShopsShoes();
         shoppingShoesResultPage.verifyUserSeeSuccessfulOrderMessage();
     }
-    @Test //(priority = 5)
+    @Test (priority = 5)
     public void guestUserShouldAbleToBuyProduct()
     {
         homePage.clickOnApparelLink();

@@ -12,20 +12,20 @@ public class ReferProductResultPage extends Utils
 
     public void verifyUserIsOnAppleMacBookProPage()
     {
-        Assert.assertEquals(getTextFromLocator(_macBookProPage),"Apple MacBook Pro 13-inch");
+        Assert.assertEquals(getTextReturn(_macBookProPage),"Apple MacBook Pro 13-inch");
     }
 
     public void verifyUserIsOnEmailAFriendPage()
     {
-        Assert.assertEquals(getTextFromLocator(_emailAFriendPage),"Email a friend");
+        Assert.assertEquals(getTextReturn(_emailAFriendPage),"Email a friend");
     }
 
     public void verifyEmailHasBeenSentSuccessfully()
     {
-        Assert.assertEquals(getTextFromLocator(_emailSuccessfulMessage),"Your message has been sent.");
+        Assert.assertEquals(getTextReturn(_emailSuccessfulMessage),"Your message has been sent.");
     }
     public void verifyUserShouldNotAbleToSendEmailWithoutRegistration()
     {
-        Assert.assertEquals(getTextFromLocator(_emailErrorMessageIfTriesWithoutRegistration),"Enter your email");
+        Assert.assertEquals(getTextReturn(_emailErrorMessageIfTriesWithoutRegistration),"Enter your email");
     }
 }
